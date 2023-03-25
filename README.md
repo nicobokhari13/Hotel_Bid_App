@@ -1,4 +1,4 @@
-# Hotel Bidding Applicatoin 
+# Hotel Bidding Application
 
 By: Nico Bokhari 
 

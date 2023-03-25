@@ -8,9 +8,15 @@ FONT = "Arial"
 FONT_SIZE = 25
 
 class App:
+    
+    _bid = 0.0
+    _successor = ""
+    
     def __init__(self):
-        self.bid = 0.0
         # Create window
+        self.createWindow()
+        
+    def createWindow(self):
         self.win = tk.Tk(className=WINDOW_NAME)
         # set window size
         self.win.geometry(WINDOW_WIDTH + "x" + WINDOW_HEIGHT)
@@ -68,7 +74,8 @@ class App:
             relx = 0.05,
             rely = 0.4
         )
-
+    
+    
     def onSubmit(self):
         #clear error label text
         self.errorLabel.config(
@@ -79,11 +86,15 @@ class App:
         if value != "":
             try:
                 self.bid = float(value) # convert bid to float
+                
                 print(self.bid)
+                
             except ValueError: # if bid conversion returns error
 
                 self.errorLabel.config(
                     text = "Error: Please enter a number"
                 )
-                self.inputBid.delete(0, tk.END)
+            except: 
+                print("I'm in the except condition")
+            self.inputBid.delete(0, tk.END) # Remove text in field
 

@@ -7,19 +7,10 @@ class StandardHandler(AbstractHandler):
     
     def handleRequest(self, bid:float):
         if bid < 80.0:
-            return "Sorry, that bid is not enough for any room"
-        if bid < 150.0: 
+            return "Bid rejected: bid is not enough for any room. Please enter a new bid price"
+        if bid >= 80.0: 
             if self.numRooms:
                 self.provideRoom()
                 return "Success! You have booked a Standard Room"
-            return "Sorry, your bid can only afford a Standard Room, and we are all sold out"
-        if bid == 150.0:
-            if self.numRooms:
-                self.provideRoom()
-                return "Success! You have booked a Standard Room"
-            if(self.successor):
-                self.successor.handleRequest(bid)
-        if bid > 150.0:
-            if(self.successor):
-                self.successor.handleRequest(bid)
+            return "Sorry, all room have been booked"
         return None

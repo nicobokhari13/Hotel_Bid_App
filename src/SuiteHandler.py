@@ -6,4 +6,13 @@ class SuiteHandler(AbstractHandler):
         super().__init__(rooms)
         
     def handleRequest(self, bid:float):
-        pass
+        if bid >= 280.0:
+            if self.numRooms:
+                self.provideRoom()
+                return "Success! You have booked a Suite Room"
+            if self.successor:
+                return self.successor.handleRequest(bid)
+        else:
+            if self.successor:
+                return self.successor.handleRequest(bid)
+        return None

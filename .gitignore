@@ -1,1 +1,6 @@
 src/__pycache__/app.cpython-310.pyc
+src/__pycache__/AbstractHandler.cpython-310.pyc
+src/__pycache__/DeluxeHandler.cpython-310.pyc
+src/__pycache__/RoomHandler.cpython-310.pyc
+src/__pycache__/StandardHandler.cpython-310.pyc
+src/__pycache__/SuiteHandler.cpython-310.pyc

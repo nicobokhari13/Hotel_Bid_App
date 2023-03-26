@@ -1,9 +1,15 @@
-from app import *
+from App import *
 
 def main():
-    app = App()
+    handler = StandardHandler(45)
+    result = handler.handleRequest(100.0)
+    try:
+        print(result)
+    except:
+        print("Result was None")
+    #app = App()
     #display window 
-    app.win.mainloop()
+    #app.win.mainloop()
 
 
 

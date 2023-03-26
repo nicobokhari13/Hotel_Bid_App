@@ -1,4 +1,7 @@
 import tkinter as tk
+from StandardHandler import *
+from DeluxeHandler import *
+from SuiteHandler import * 
 WINDOW_WIDTH = "800"
 WINDOW_HEIGHT = "500"
 WINDOW_NAME = "Project 2: Hotel Bidding with COR by Nico Bokhari"
@@ -9,10 +12,12 @@ FONT_SIZE = 25
 
 class App:
     
-    _bid = 0.0
-    _successor = ""
-    
     def __init__(self):
+        # Create Handlers
+        self.standHandler = StandardHandler(45)
+        self.delxHandler = DeluxeHandler(15)
+        self.suiteHandler = SuiteHandler(10)
+        self.handleMessage = ""
         # Create window
         self.createWindow()
         
@@ -56,7 +61,7 @@ class App:
             font = (FONT, FONT_SIZE - 5)
         )
         #Place Error Label
-        self.errorLabel.place(
+        self.resultLabel.place(
             relx = 0.05,
             rely = 0.3
         )
@@ -78,7 +83,7 @@ class App:
     
     def onSubmit(self):
         #clear error label text
-        self.errorLabel.config(
+        self.resultLabel.config(
             text = ""
         )
         #get input value from inputBid Entry
@@ -91,7 +96,7 @@ class App:
                 
             except ValueError: # if bid conversion returns error
 
-                self.errorLabel.config(
+                self.resultLabel.config(
                     text = "Error: Please enter a number"
                 )
             except: 

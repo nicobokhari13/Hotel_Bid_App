@@ -8,3 +8,8 @@ This project allows the user to enter and submit a bid for a hotel room. This pr
 
 This software was created to demonstrate my knowledge of the Chain of Responsibility Design Pattern for the course CIS476: Software Architecture & Design Patterns offered at University of Michigan-Dearborn. I completed this course as a requirement for my Software Engineering degree. 
 
+## Run Software
+
+```
+py main.py
+```

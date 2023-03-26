@@ -12,6 +12,6 @@ class StandardHandler(AbstractHandler):
             if self.numRooms: #if there is a room, give one and return
                 self.provideRoom()
                 return "Success! You have booked a Standard Room"
-            #if there are no Standard Rooms left, and the bid is within range, then the other handlers have not 
+            #if there are no Standard Rooms left, return that all Standard rooms are booked
             return "Sorry, all Standard rooms have been booked"
         return None
